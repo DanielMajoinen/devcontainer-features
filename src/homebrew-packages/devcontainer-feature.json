@@ -1,0 +1,37 @@
+{
+  "name": "Homebrew Packages",
+  "id": "homebrew-packages",
+  "version": "2.1.0",
+  "description": "Installs Homebrew packages",
+  "documentationURL": "https://github.com/DanielMajoinen/devcontainer-features/tree/main/src/homebrew-packages",
+  "options": {
+    "username": {
+      "type": "string",
+      "proposals": [
+        "vscode"
+      ],
+      "default": "node",
+      "description": "The user to install packages as."
+    },
+    "packages": {
+      "type": "string",
+      "proposals": [
+        "aws-vault"
+      ],
+      "default": "",
+      "description": "A list of packages to install after Homebrew is available."
+    }
+  },
+  "containerEnv": {
+    "PATH": "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:${PATH}",
+    "MANPATH": "/home/linuxbrew/.linuxbrew/share/man:${MANPATH}",
+    "INFOPATH": "/home/linuxbrew/.linuxbrew/share/info:${INFOPATH}"
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/meaningful-ooo/devcontainer-features/homebrew"
+  ],
+  "legacyIds": [
+    "homebrew"
+  ]
+}
