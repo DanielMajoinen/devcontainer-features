@@ -1,7 +1,7 @@
 {
   "name": "Homebrew Packages",
   "id": "homebrew-packages",
-  "version": "2.1.0",
+  "version": "3.0.0",
   "description": "Installs Homebrew packages",
   "documentationURL": "https://github.com/DanielMajoinen/devcontainer-features/tree/main/src/homebrew-packages",
   "options": {
