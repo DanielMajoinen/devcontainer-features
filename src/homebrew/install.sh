@@ -3,6 +3,7 @@
 BREW_PREFIX=${BREW_PREFIX:-"/home/linuxbrew/.linuxbrew"}
 SHALLOW_CLONE=${SHALLOW_CLONE:-"false"}
 USERNAME=${USERNAME:-"automatic"}
+PACKAGES=${PACKAGES:-""}
 
 ARCHITECTURE="$(uname -m)"
 if [ "${ARCHITECTURE}" != "amd64" ] && [ "${ARCHITECTURE}" != "x86_64" ]; then
@@ -83,15 +84,6 @@ updaterc() {
   fi
 }
 
-updatefishconfig() {
-  if [ "${UPDATE_RC}" = "true" ]; then
-    echo "Updating /etc/fish/config.fish..."
-    if [ -f "/etc/fish/config.fish" ]; then
-        echo -e "$1" >> /etc/fish/config.fish
-      fi
-  fi
-}
-
 export DEBIAN_FRONTEND=noninteractive
 
 # Clean up
@@ -131,11 +123,14 @@ else
   git clone --depth 1 https://github.com/Homebrew/homebrew-core "${BREW_PREFIX}/Homebrew/Library/Taps/homebrew/homebrew-core"
   # Disable automatic updates as they are not allowed with shallow clone installation
   updaterc "export HOMEBREW_NO_AUTO_UPDATE=1"
-  updatefishconfig "set -gx HOMEBREW_NO_AUTO_UPDATE 1"
 fi
 "${BREW_PREFIX}/Homebrew/bin/brew" config
 mkdir "${BREW_PREFIX}/bin"
 ln -s "${BREW_PREFIX}/Homebrew/bin/brew" "${BREW_PREFIX}/bin"
 chown -R ${USERNAME} "${BREW_PREFIX}"
+
+if [ "${PACKAGES}" != "" ]; then
+  su ${USERNAME} -c "brew install ${PACKAGES}"
+fi
 
 echo "Done!"
