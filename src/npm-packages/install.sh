@@ -2,6 +2,7 @@
 
 USERNAME=${USERNAME:-"node"}
 PACKAGES=${PACKAGES:-""}
+TOKEN=${TOKEN:-""}
 
 ARCHITECTURE="$(uname -m)"
 if [ "${ARCHITECTURE}" != "amd64" ] && [ "${ARCHITECTURE}" != "x86_64" ]; then
@@ -23,6 +24,10 @@ export DEBIAN_FRONTEND=noninteractive
 
 # Install NPM packages
 echo "Installing NPM packages..."
+
+if [ "${TOKEN}" != "" ]; then
+  export NPM_TOKEN=${TOKEN}
+fi
 
 if [ "${PACKAGES}" != "" ]; then
   echo "NPM_TOKEN: ${NPM_TOKEN}"
