@@ -28,7 +28,7 @@
       ],
       "default": "",
       "description": "NPM token to install private packages."
-    },
+    }
   },
   "installsAfter": [
     "ghcr.io/devcontainers/features/common-utils"
