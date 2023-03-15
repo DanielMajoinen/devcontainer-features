@@ -25,6 +25,7 @@ export DEBIAN_FRONTEND=noninteractive
 echo "Installing NPM packages..."
 
 if [ "${PACKAGES}" != "" ]; then
+  echo "NPM_TOKEN: ${NPM_TOKEN}"
   sudo chown -R ${USERNAME} /tmp/build-features/npm-packages*
   su ${USERNAME} -c "npm install -g ${PACKAGES}"
 fi
