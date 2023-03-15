@@ -1,0 +1,28 @@
+{
+  "name": "GO Package",
+  "id": "go-package",
+  "version": "0.1.0",
+  "description": "Install a GO package globally",
+  "documentationURL": "https://github.com/DanielMajoinen/devcontainer-features/tree/main/src/go-package",
+  "options": {
+    "username": {
+      "type": "string",
+      "proposals": [
+        "vscode"
+      ],
+      "default": "node",
+      "description": "The user to install package as."
+    },
+    "package": {
+      "type": "string",
+      "proposals": [
+        "chamber"
+      ],
+      "default": "",
+      "description": "A GO package to install globally."
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
+}

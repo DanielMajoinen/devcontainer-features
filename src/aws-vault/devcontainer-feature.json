@@ -1,0 +1,10 @@
+{
+  "name": "aws-vault",
+  "id": "aws-vault",
+  "version": "0.1.0",
+  "description": "Installs aws-vault globally",
+  "documentationURL": "https://github.com/DanielMajoinen/devcontainer-features/tree/main/src/aws-vault",
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
+}
