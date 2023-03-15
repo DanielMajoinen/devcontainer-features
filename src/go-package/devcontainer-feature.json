@@ -1,7 +1,7 @@
 {
   "name": "GO Package",
   "id": "go-package",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Install a GO package globally",
   "documentationURL": "https://github.com/DanielMajoinen/devcontainer-features/tree/main/src/go-package",
   "options": {
@@ -23,6 +23,7 @@
     }
   },
   "installsAfter": [
-    "ghcr.io/devcontainers/features/common-utils"
+    "ghcr.io/devcontainers/features/common-utils",
+    "ghcr.io/devcontainers/features/go"
   ]
 }
