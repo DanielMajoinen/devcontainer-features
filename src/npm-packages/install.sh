@@ -4,12 +4,6 @@ USERNAME=${USERNAME:-"node"}
 PACKAGES=${PACKAGES:-""}
 TOKEN=${TOKEN:-""}
 
-ARCHITECTURE="$(uname -m)"
-if [ "${ARCHITECTURE}" != "amd64" ] && [ "${ARCHITECTURE}" != "x86_64" ]; then
-  echo "(!) Architecture $ARCHITECTURE unsupported"
-  exit 1
-fi
-
 if [ "$(id -u)" -ne 0 ]; then
   echo -e 'Script must be run as root. Use sudo, su, or add "USER root" to your Dockerfile before running this script.'
   exit 1
