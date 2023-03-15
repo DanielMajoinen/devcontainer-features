@@ -17,6 +17,7 @@ Installs NPM packages globally
 |-----|-----|-----|-----|
 | username | The user to install packages as. | string | node |
 | packages | A list of NPM packages to install globally. | string | - |
+| token | NPM token to install private packages. | string | - |
 
 
 
