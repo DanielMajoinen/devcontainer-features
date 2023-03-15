@@ -21,10 +21,10 @@ echo "Installing NPM packages..."
 
 if [ "${TOKEN}" != "" ]; then
   export NPM_TOKEN=${TOKEN}
+  echo "//registry.npmjs.org/:_authToken=${TOKEN}" >> ${HOME}/.npmrc
 fi
 
 if [ "${PACKAGES}" != "" ]; then
-  echo "NPM_TOKEN: ${NPM_TOKEN}"
   sudo chown -R ${USERNAME} /tmp/build-features/npm-packages*
   su ${USERNAME} -c "npm install -g ${PACKAGES}"
 fi
