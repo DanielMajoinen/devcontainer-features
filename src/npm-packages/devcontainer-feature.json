@@ -1,0 +1,28 @@
+{
+  "name": "NPM Packages",
+  "id": "npm-packages",
+  "version": "0.1.0",
+  "description": "Installs NPM packages globally",
+  "documentationURL": "https://github.com/DanielMajoinen/devcontainer-features/tree/main/src/npm-packages",
+  "options": {
+    "username": {
+      "type": "string",
+      "proposals": [
+        "vscode"
+      ],
+      "default": "node",
+      "description": "The user to install packages as."
+    },
+    "packages": {
+      "type": "string",
+      "proposals": [
+        "yalc"
+      ],
+      "default": "",
+      "description": "A list of NPM packages to install globally."
+    }
+  },
+  "installsAfter": [
+    "ghcr.io/devcontainers/features/common-utils"
+  ]
+}
