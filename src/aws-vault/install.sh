@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+VERSION=${VERSION:-"7.1.0"}
+
 if [ "$(id -u)" -ne 0 ]; then
   echo -e 'Script must be run as root. Use sudo, su, or add "USER root" to your Dockerfile before running this script.'
   exit 1
@@ -15,5 +17,5 @@ export DEBIAN_FRONTEND=noninteractive
 echo "Installing aws-vault..."
 
 ARCHITECTURE="$(uname -m)"
-curl -o /usr/bin/aws-vault https://github.com/99designs/aws-vault/releases/download/v7.1.0/aws-vault-linux-${ARCHITECTURE}
+curl -o /usr/bin/aws-vault https://github.com/99designs/aws-vault/releases/download/v${VERSION}/aws-vault-linux-${ARCHITECTURE}
 chmod 755 /usr/bin/aws-vault

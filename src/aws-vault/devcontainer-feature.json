@@ -4,6 +4,16 @@
   "version": "0.1.0",
   "description": "Installs aws-vault globally",
   "documentationURL": "https://github.com/DanielMajoinen/devcontainer-features/tree/main/src/aws-vault",
+  "options": {
+    "version": {
+      "type": "string",
+      "proposals": [
+        "7.1.0"
+      ],
+      "default": "7.1.0",
+      "description": "The version of aws-vault to install."
+    }
+  },
   "installsAfter": [
     "ghcr.io/devcontainers/features/common-utils"
   ]
